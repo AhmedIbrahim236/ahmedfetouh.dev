@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "../components/ui/ThemeProvider";
+import ThemeProvider from "@/components/ThemeProvider";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Ahmed Fetouh — Fullstack Developer & Software Engineer",
@@ -48,8 +53,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={`${inter.className} ${firaCode.variable}`}>
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
