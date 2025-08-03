@@ -44,18 +44,18 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 1rem;
   --background: hsl(220 25% 97%);
   --foreground: hsl(225 30% 10%);
-  --card: oklch(1 0 0);
+  --card: hsl(0 0% 100%);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: hsl(250 85% 65%);
   --primary-foreground: hsl(0 0% 100%);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --secondary: hsl(240 50% 94%);
+  --secondary-foreground: hsl(240 40% 40%);
+  --muted: hsl(225 10% 92%);
   --muted-foreground: oklch(0.556 0 0);
   --accent: hsl(170 80% 45%);
   --accent-foreground: hsl(0 0% 100%);
@@ -81,15 +81,15 @@
 .dark {
   --background: hsl(225 30% 8%);
   --foreground: hsl(225 10% 90%);
-  --card: oklch(0.205 0 0);
+  --card: hsl(225 25% 12%);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: hsl(250 85% 65%);
+  --primary: hsl(250, 85%, 65%);
   --primary-foreground: hsl(0 0% 100%);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
+  --secondary: hsl(225 30% 20%);
+  --secondary-foreground: hsl(225 10% 90%);
+  --muted: hsl(225 30% 16%);
   --muted-foreground: oklch(0.708 0 0);
   --accent: hsl(170 80% 40%);
   --accent-foreground: hsl(0 0% 100%);
@@ -112,7 +112,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-violet-600 to-blue-700 bg-clip-text text-transparent;
+  }
+}
+
 @theme {
+  --animate-bounce-subtle: bounce-subtle 3s ease-in-out infinite;
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
 }
 
 @layer base {

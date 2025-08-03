@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${firaCode.variable}`}>
         <ThemeProvider>
           <Header />
-          {children}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
