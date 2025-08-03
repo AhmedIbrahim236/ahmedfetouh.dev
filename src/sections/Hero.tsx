@@ -1,7 +1,8 @@
 import AnimatedParticles from "@/components/AnimatedParticles";
+import Code from "@/components/Code";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
